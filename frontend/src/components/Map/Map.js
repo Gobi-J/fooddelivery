@@ -9,6 +9,7 @@ import {
   useMapEvents,
 } from 'react-leaflet';
 import { toast } from 'react-toastify';
+import * as L from 'leaflet';
 
 export default function Map({ readonly, location, onChange }) {
   return (
@@ -53,11 +54,18 @@ function FindButtonAndMarker({ readonly, location, onChange }) {
     },
     locationfound(e) {
       setPosition(e.latlng);
-      map.flyTo(e.latlng, 13);
+      map.flyTo(e.latlng, 9);
     },
     locationerror(e) {
       toast.error(e.message);
     },
+  });
+
+  const markerIcon = new L.Icon({
+    iconUrl: '/marker-icon-2x.png',
+    iconSize: [25, 41],
+    iconAnchor: [12.5, 41],
+    popupAnchor: [0, -41],
   });
 
   return (
@@ -81,6 +89,7 @@ function FindButtonAndMarker({ readonly, location, onChange }) {
           }}
           position={position}
           draggable={!readonly}
+          icon={markerIcon}
         >
           <Popup>Shipping Location</Popup>
         </Marker>
