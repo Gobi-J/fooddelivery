@@ -22,7 +22,7 @@ export default function CartPage() {
                   <img src={`${item.food.imageUrl}`} alt={item.food.name} />
                 </div>
                 <div>
-                  <Link to={`/food/${item.food.id}`}>{item.food.name}</Link>
+                  <Link to={`/foods/${item.food.id}`}>{item.food.name}</Link>
                 </div>
 
                 <div>
