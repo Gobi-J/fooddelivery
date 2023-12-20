@@ -8,15 +8,12 @@
   "main": "index.js",
   "scripts": {
     "start": "cd backend && npm start",
-    "prebuild":"cd backend && npm install & cd frontend && bpm install",
+    "prebuild":"cd backend && npm install & cd frontend && npm install",
     "build": "cd frontend && npm run build",
     "postbuild": "move /Y frontend/build backend/src/public"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
-  "engines": {
-    "node": ">=18 <19"
-  }
+  "description": ""
 }
